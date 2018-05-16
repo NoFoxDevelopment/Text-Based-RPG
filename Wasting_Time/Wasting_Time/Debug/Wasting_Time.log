@@ -1,0 +1,4 @@
+﻿  Wasting_Time.cpp
+c:\users\tbatson\documents\game_dev_practice\wasting_time\wasting_time\wasting_time.cpp(24): warning C4018: '<': signed/unsigned mismatch
+  Wasting_Time.vcxproj -> C:\Users\tbatson\Documents\Game_Dev_Practice\Wasting_Time\Debug\Wasting_Time.exe
+  Wasting_Time.vcxproj -> C:\Users\tbatson\Documents\Game_Dev_Practice\Wasting_Time\Debug\Wasting_Time.pdb (Full PDB)
