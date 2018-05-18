@@ -31,7 +31,7 @@ void Magic::loadSpells(std::string path)
 
 			Magic spell(levelObtained, damage, MPcost, static_cast<Element>(element), range, AOE, GodMagic, spellActive, spellname);
 
-			spellList.push_back(spell);
+			//spellList.push_back(spell);
 
 		
 		}
@@ -44,13 +44,13 @@ void Magic::SaveSpellState(std::string path)
 
 	
 
-	for (int i = 0; i < spellList.size(); i++)
+	/*for (int i = 0; i < spellList.size(); i++)
 	{
 
 
 		outFile << spellList[i];
 
-	}
+	}*/
 
 }
 

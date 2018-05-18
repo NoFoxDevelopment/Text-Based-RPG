@@ -10,8 +10,8 @@ public:
 
 	Items() {}
 
-	Items(int stack, int restoreHP, int restoreMP, std::string name, std::string description):
-		max_stack(stack), m_restoreHP(restoreHP), m_restoreMP(restoreMP), m_name(name), m_description(description)
+	Items(std::string name, std::string description, bool stackable, int itemID):
+		m_name(name), m_description(description), m_stackable(stackable), m_itemID(itemID)
 	{}
 
 	~Items()
@@ -19,22 +19,29 @@ public:
 	}
 
 
-	std::string getItemName() { return m_name; }
+	virtual	std::string getItemName() { return m_name; }
 
 	std::string getItemDescription() { return m_description; }
 
-	int getRestoreHP() { return m_restoreHP; }
-	int getRestoreMP() { return m_restoreMP; }
+	int getItemID() { return m_itemID; }
+
+
+	std::string isStackable()
+	{
+		if (m_stackable)
+			return "Yes";
+
+		return "No";
+	}
+
 
 	void loadItems(std::string path);
 	
 
-private:
+protected:
 
-	int max_stack;
-
-	int m_restoreHP;
-	int m_restoreMP;
+	int m_itemID;
+	bool m_stackable;
 	std::string m_name;
 	std::string m_description;
 

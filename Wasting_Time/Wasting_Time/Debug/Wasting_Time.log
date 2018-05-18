@@ -1,4 +1,7 @@
-﻿  Wasting_Time.cpp
-c:\users\tbatson\documents\game_dev_practice\wasting_time\wasting_time\wasting_time.cpp(24): warning C4018: '<': signed/unsigned mismatch
+﻿  Character.cpp
+c:\users\tbatson\documents\game_dev_practice\wasting_time\wasting_time\character.cpp(88): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\tbatson\documents\game_dev_practice\wasting_time\wasting_time\character.cpp(60): warning C4101: 'stackable': unreferenced local variable
+c:\users\tbatson\documents\game_dev_practice\wasting_time\wasting_time\character.cpp(57): warning C4101: 'aPlacement': unreferenced local variable
+c:\users\tbatson\documents\game_dev_practice\wasting_time\wasting_time\character.cpp(140): warning C4018: '<': signed/unsigned mismatch
   Wasting_Time.vcxproj -> C:\Users\tbatson\Documents\Game_Dev_Practice\Wasting_Time\Debug\Wasting_Time.exe
   Wasting_Time.vcxproj -> C:\Users\tbatson\Documents\Game_Dev_Practice\Wasting_Time\Debug\Wasting_Time.pdb (Full PDB)

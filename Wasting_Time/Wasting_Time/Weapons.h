@@ -1,11 +1,9 @@
 #pragma once
+#include "Items.h"
 #include "Attributes.h"
-#include <fstream>
-#include <string>
-#include <vector>
+#include "RedundantHeaderKeepr.h"
 
-
-class Weapons : public Attributes
+class Weapons : public Items, public Attributes
 {
 public:
 
@@ -28,9 +26,8 @@ public:
 
 	Weapons() {}
 
-	Weapons(bool isEquipped, int str, int dex, WeaponType wType, WeaponPlacement wPlacement, std::string name) :
-		m_isEquipped(isEquipped), Attributes(0, 0, str, 0, dex, 0, 0, 0), m_wType(wType), m_wPlacement(wPlacement), 
-		m_name(name)
+	Weapons(std::string name, std::string description, int itemID, bool isEquipped, int str, int vit, int dex, int agi, int intel, int mnd, WeaponType wType, WeaponPlacement wPlacement) :
+		Items(name, description, false, itemID), m_isEquipped(isEquipped), Attributes(0, 0, str, vit, dex, agi, intel, mnd), m_wType(wType), m_wPlacement(wPlacement)
 	{}
 
 	~Weapons()
@@ -41,16 +38,17 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, Weapons weapon);
 
+	std::string getItemName() { return m_name; }
+
 private:
 
 	bool m_isEquipped;
-	std::string m_name;
 	WeaponType m_wType;
 	WeaponPlacement m_wPlacement;
 
 
 };
 
-extern std::vector<Weapons> weaponList;
+
 
 

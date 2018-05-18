@@ -59,4 +59,4 @@ private:
 
 };
 
-extern std::vector<Magic> spellList;
+//extern std::vector<Magic> spellList;

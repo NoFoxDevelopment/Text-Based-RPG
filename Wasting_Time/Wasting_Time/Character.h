@@ -2,6 +2,9 @@
 
 #include <string>
 #include "Attributes.h"
+#include "Items.h"
+#include "Weapons.h"
+#include "Armor.h"
 
 
 
@@ -62,6 +65,17 @@ public:
 
 	void levelUp(int mEXP);
 
+	void fullInventory();
+	int getInventorySize() { return inventory.size(); }
+	int getMaxInventorySize() { return max_inventory; }
+
+	void getInventoryItemName();
+
+	void getItemFromDatabase(int itemID);
+
+	void addToInventory(int itemID);
+
+	void removeFromInventory(Items* item);
 
 private:
 
@@ -71,5 +85,7 @@ private:
 	int m_nextExp;
 	int m_level = 1;
 
+	std::vector<Items *> inventory;
+	int max_inventory = 30;
 	
 };

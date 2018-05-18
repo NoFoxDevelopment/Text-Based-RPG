@@ -5,7 +5,7 @@
 void Abilities::loadAbilities(std::string path)
 {
 
-	std::ifstream infile(path);
+	/*std::ifstream infile(path);
 
 	int levelObtained;
 	int damage;
@@ -22,13 +22,13 @@ void Abilities::loadAbilities(std::string path)
 		Abilities ability(levelObtained, damage, MPcost, range, static_cast<DamageType>(damageType), AOE, GodAbility, ActiveAbility, abilityName);
 
 		abilitieslist.push_back(ability);
-	}
+	}*/
 
 }
 
 void Abilities::saveAbilities(std::string path)
 {
-	std::ofstream outFile(path);
+	/*std::ofstream outFile(path);
 
 
 
@@ -38,7 +38,7 @@ void Abilities::saveAbilities(std::string path)
 
 		outFile << abilitieslist[i];
 
-	}
+	}*/
 
 }
 
@@ -48,4 +48,6 @@ std::ostream & operator<<(std::ostream & os, Abilities ability)
 
 	os << ability.m_levelObtained << ' ' << ability.m_damage << ' ' << ability.m_MPcost << ' ' << ability.m_range << ' ' << static_cast<int>(ability.m_dtype) << ' '
 	<< ability.m_AOE << ' ' << ability.m_GodAbility << ' ' << ability.m_AbilityActive << ' ' << ability.m_AbilityName << std::endl;
+
+	return os;
 }

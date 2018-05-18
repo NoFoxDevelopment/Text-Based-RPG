@@ -1,10 +1,9 @@
 #pragma once
+#include "Items.h"
 #include "Attributes.h"
-#include <string>
-#include <fstream>
-#include <vector>
+#include "RedundantHeaderKeepr.h"
 
-class Armor : public Attributes
+class Armor : public Items, public Attributes
 {
 public:
 
@@ -20,8 +19,8 @@ public:
 
 	Armor() {}
 
-	Armor(bool isEquipped, int vit, int agi, int intel, int mnd, ArmorPlacement aPlacement, std::string name) :
-		m_isEquipped(isEquipped), Attributes(0, 0, 0, vit, 0, agi, intel, mnd), m_aPlacement(aPlacement), m_name(name)
+	Armor(std::string name, std::string description, int itemID, bool isEquipped, int str, int vit, int dex, int agi, int intel, int mnd, ArmorPlacement aPlacement) :
+		Items(name, description, false, itemID),m_isEquipped(isEquipped), Attributes(0, 0, str, vit, dex, agi, intel, mnd), m_aPlacement(aPlacement)
 	{
 
 	}
@@ -37,8 +36,6 @@ public:
 private:
 
 	bool m_isEquipped; 
-	std::string m_name;
 	ArmorPlacement m_aPlacement;
 };
 
-extern std::vector<Armor> armorList;
