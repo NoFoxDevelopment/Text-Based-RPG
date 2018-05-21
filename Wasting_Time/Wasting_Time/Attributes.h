@@ -21,12 +21,12 @@ public:
 	int			getMaxHealth()	{ return m_maxHealth; }
 	int			getMaxMana()	{ return m_maxMana; }
 
-	int			getStr() { return m_str; }
-	int			getVit() { return m_vit; }
-	int			getDex() { return m_dex; }
-	int			getAgi() { return m_agi; }
-	int			getInt() { return m_intel; }
-	int			getMnd() { return m_mind; }
+	virtual int			getStr() { return m_str; }
+	virtual int			getVit() { return m_vit; }
+	virtual int			getDex() { return m_dex; }
+	virtual int			getAgi() { return m_agi; }
+	virtual int			getInt() { return m_intel; }
+	virtual int			getMnd() { return m_mind; }
 
 
 	void		setHealth(int health)	{ m_health += health; }
@@ -42,7 +42,7 @@ public:
 	void		setInt(int inl) { m_intel += inl; }
 	void		setMnd(int mnd) { m_mind += mnd; }
 
-private: 
+protected: 
 
 	int m_maxHealth;
 	int m_health;

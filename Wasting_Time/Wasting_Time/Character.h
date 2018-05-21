@@ -5,6 +5,7 @@
 #include "Items.h"
 #include "Weapons.h"
 #include "Armor.h"
+#include "Consumables.h"
 
 
 
@@ -20,6 +21,17 @@ public:
 		MONK,
 		WARRIOR,
 		MAX_CLASSES
+	};
+
+	enum EquipmentSlot
+	{
+		MAINHAND,
+		OFFHAND,
+		HEAD,
+		BODY,
+		HANDS,
+		LEGS,
+		FEET
 	};
 
 	Character(std::string name, AdventuringClass advClass, int health, int mana, int str, int vit, int dex, int agi, int intel, int mind) :
@@ -77,6 +89,12 @@ public:
 
 	void removeFromInventory(Items* item);
 
+	void equipItem(Items* item); 
+	void unequipItem(Items* item); //check this for memory leaks. Also look for a better way to run both of these functions
+
+
+	void useItem(Consumables consumable);
+
 private:
 
 	std::string m_name;
@@ -87,5 +105,8 @@ private:
 
 	std::vector<Items *> inventory;
 	int max_inventory = 30;
+
+	std::vector<Items*> Equipment;
+	
 	
 };
