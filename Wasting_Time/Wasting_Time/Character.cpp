@@ -116,7 +116,11 @@ void Character::getItemFromDatabase(int itemID)
 					static_cast<Weapons::WeaponPlacement>(wPlacement)));
 				break;
 			}
+<<<<<<< HEAD
 			else if(itemFID >= 2000 && itemFID <= 2999)
+=======
+			else if (itemFID >= 2000 && itemFID <= 2999)
+>>>>>>> e9b3edf0705d1a848b2112fc537471ae5317eac7
 			{
 				std::getline(sstream, name, ',');
 				std::getline(sstream, descrip, ',');
@@ -145,12 +149,17 @@ void Character::getItemFromDatabase(int itemID)
 				std::getline(sstream, stringID, ',');
 				aPlacement = std::atoi(stringID.c_str());
 
+<<<<<<< HEAD
+=======
+				
+>>>>>>> e9b3edf0705d1a848b2112fc537471ae5317eac7
 
 
 				inventory.push_back(new Armor(name, descrip, itemFID, static_cast<bool>(isEquipped), str, vit, dex, agi, intel, mnd,
 					static_cast<Armor::ArmorPlacement>(aPlacement)));
 				break;
 			}
+<<<<<<< HEAD
 			else if(itemFID >= 3000 && itemFID <= 3999)
 			{
 					//check if item is stackable.
@@ -174,10 +183,15 @@ void Character::getItemFromDatabase(int itemID)
 				}
 
 				//If it is not in the inventory, push_back to inventory. 
+=======
+			else if (itemFID >= 3000 && itemFID <= 3999)
+			{
+>>>>>>> e9b3edf0705d1a848b2112fc537471ae5317eac7
 				std::getline(sstream, name, ',');
 				std::getline(sstream, descrip, ',');
 
 				std::getline(sstream, stringID, ',');
+<<<<<<< HEAD
 				hpHeal = std::atoi(stringID.c_str());
 
 				std::getline(sstream, stringID, ',');
@@ -190,13 +204,42 @@ void Character::getItemFromDatabase(int itemID)
 				stack = std::atoi(stringID.c_str());
 
 				inventory.push_back(new Consumables(name, descrip, stackable, itemFID, stack, hpHeal, mpHeal, poisonHeal));
+=======
+				isEquipped = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				str = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				vit = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				dex = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				agi = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				intel = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				mnd = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				wType = std::atoi(stringID.c_str());
+
+				std::getline(sstream, stringID, ',');
+				wPlacement = std::atoi(stringID.c_str());
+
+
+
+				inventory.push_back(new Weapons(name, descrip, itemFID, static_cast<bool>(isEquipped), str, vit, dex, agi, intel, mnd, static_cast<Weapons::WeaponType>(wType),
+					static_cast<Weapons::WeaponPlacement>(wPlacement)));
+>>>>>>> e9b3edf0705d1a848b2112fc537471ae5317eac7
 				break;
 			}
 		}
-		else
-		{
-			//infile.ignore(1000, '\n');
-		}
+		
 	}
 
 	
