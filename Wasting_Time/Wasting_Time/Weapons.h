@@ -10,12 +10,7 @@ public:
 	enum WeaponType
 	{
 		SOWRD,
-		SHIELD,
-		AXE,
-		CLUB,
-		STAFF,
-		BOW,
-		MAX_WEAPON_TYPES
+		SHIELD
 	};
 
 	enum WeaponPlacement
@@ -35,7 +30,7 @@ public:
 	{}
 
 	std::string getItemName() { return m_name; }
-	
+
 	std::string getItemDescription() { return m_description; }
 
 	int getItemID() { return m_itemID; }
@@ -57,7 +52,3 @@ private:
 
 
 };
-
-
-
-

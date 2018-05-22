@@ -10,7 +10,7 @@ public:
 
 	Items() {}
 
-	Items(std::string name, std::string description, bool stackable, int itemID, int stack):
+	Items(std::string name, std::string description, bool stackable, int itemID, int stack) :
 		m_name(name), m_description(description), m_stackable(stackable), m_itemID(itemID), m_stack(stack)
 	{}
 
@@ -36,7 +36,8 @@ public:
 	}
 
 	virtual void addToStack() { m_stack++; }
-	
+	virtual void removeFromStack() { m_stack--; }
+
 
 protected:
 

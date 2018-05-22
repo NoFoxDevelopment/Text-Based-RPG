@@ -21,11 +21,11 @@ public:
 	Armor() {}
 
 	Armor(std::string name, std::string description, int itemID, bool isEquipped, int str, int vit, int dex, int agi, int intel, int mnd, ArmorPlacement aPlacement) :
-		Items(name, description, false, itemID, 1),m_isEquipped(isEquipped), Attributes(0, 0, str, vit, dex, agi, intel, mnd), m_aPlacement(aPlacement)
+		Items(name, description, false, itemID, 1), m_isEquipped(isEquipped), Attributes(0, 0, str, vit, dex, agi, intel, mnd), m_aPlacement(aPlacement)
 	{
 
 	}
-	
+
 	~Armor()
 	{}
 
@@ -45,7 +45,6 @@ public:
 
 private:
 
-	bool m_isEquipped; 
+	bool m_isEquipped;
 	ArmorPlacement m_aPlacement;
 };
-

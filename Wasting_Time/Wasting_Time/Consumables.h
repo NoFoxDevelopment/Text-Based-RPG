@@ -9,7 +9,7 @@ class Consumables : public Items
 {
 public:
 
-	Consumables(std::string name, std::string descript, bool stackable, int itemID, int stack, int hpHeal, int mpHeal, bool healPoison):
+	Consumables(std::string name, std::string descript, bool stackable, int itemID, int stack, int hpHeal, int mpHeal, bool healPoison) :
 		Items(name, descript, stackable, itemID, stack), m_hpHeal(hpHeal), m_mpHeal(mpHeal), m_healPoison(healPoison)
 	{}
 
@@ -26,9 +26,10 @@ public:
 	int getHPHeal() { return m_hpHeal; }
 	int getMPHeal() { return m_mpHeal; }
 
-	bool getPoisonHeal() { return m_healPoison;}
+	bool getPoisonHeal() { return m_healPoison; }
 
 	void addToStack() { m_stack++; }
+	void removeFromStack() { m_stack--; }
 
 
 private:
