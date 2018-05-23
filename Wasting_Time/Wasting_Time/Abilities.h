@@ -21,37 +21,35 @@ public:
 		MAX_DMG_TYPES
 	};
 
-	Abilities(int levelObtained, int damage, int MPcost, int range, DamageType dtype, bool AOE, bool GodAbility, bool AbilityActive, std::string Abilityname):
-		m_levelObtained(levelObtained), m_damage(damage), m_MPcost(MPcost), m_range(range), m_dtype(dtype), m_AOE(AOE), m_GodAbility(GodAbility), 
-		m_AbilityActive(AbilityActive), m_AbilityName(Abilityname)
+	Abilities(int levelObtained, int damage, int MPcost, DamageType dtype, bool AOE, bool GodAbility, bool Active, std::string Abilityname):
+		m_levelObtained(levelObtained), m_damage(damage), m_MPcost(MPcost), m_dtype(dtype), m_AOE(AOE), m_GodAbility(GodAbility), m_active(Active), m_AbilityName(Abilityname)
 	{}
 
 	~Abilities()
 	{}
 
-	static void loadAbilities(std::string path);
-	static void saveAbilities(std::string path);
 
-	friend std::ostream& operator<<(std::ostream& os, Abilities ability);
+	std::string getAbilityName()	{ return m_AbilityName; }
+	DamageType getDamageType()		{ return m_dtype; }
+	int getMPcost()					{ return m_MPcost; }
+	int getLevelObtained()			{ return m_levelObtained; }
+	int getDamage()					{ return m_damage; }
+	bool getAOE()					{ return m_AOE; }
+	bool GodAbility()				{ return m_GodAbility; }
 
-	void setAbilityActive()
-	{
-		this->m_AbilityActive = true;
-	}
+	void makeAbilityActive()		{ this->m_active = true; }
 
 private:
 
 	int m_levelObtained;
 	int m_damage;
 	int m_MPcost;
-	int m_range;
 	DamageType m_dtype;
 	bool m_AOE;
 	bool m_GodAbility;
-	bool m_AbilityActive;
+	bool m_active;
 	std::string m_AbilityName;
 
 
 };
 
-extern std::vector<Abilities> abilitieslist;
